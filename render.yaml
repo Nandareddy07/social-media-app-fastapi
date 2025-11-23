@@ -44,4 +44,4 @@ services:
 databases:
   - name: social-media-db
     databaseName: social_media_db
-    plan: free
+    plan: free # Explicitly set to free tier
