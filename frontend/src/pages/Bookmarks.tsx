@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from '../utils/api';
-import { Heart, MessageCircle, Share2, User, Bookmark } from 'lucide-react';
+import { Heart, MessageCircle, User, Bookmark } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 interface Post {
