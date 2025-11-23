@@ -39,11 +39,11 @@ class UserLoginSchema(BaseModel):
     id: str
     username: str
     email: EmailStr
-    bio: str | None
-    contact_info: str | None
-    social_links: List[str] | None = None
+    bio: Optional[str]
+    contact_info: Optional[str]
+    social_links: Optional[List[str]] = None
     role: str
-    last_login: datetime | None = None
+    last_login: Optional[datetime] = None
     created_at: datetime
     updated_at: datetime
 
