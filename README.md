@@ -1,181 +1,292 @@
-<div align="center">
-    <h3>Full featured social media application -  FastAPI</h3>
-</div>
+# 🚀 Full-Featured Social Media Application
 
-A complex project that can leverage your existing backend skills while challenging you to learn and implement FastAPI concepts. Here’s a breakdown of the features to be implemented:
+A modern, feature-rich social media application built with **FastAPI** (backend) and **React** (frontend). This application provides a complete social networking experience with posts, comments, likes, follows, and real-time activity tracking.
 
-<br />
+![Project Status](https://img.shields.io/badge/status-active-success.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688.svg)
+![React](https://img.shields.io/badge/React-19.2-61DAFB.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-#### Database Design
+## ✨ Features
 
-This project models and schema strickly follows what is on the [database design file](https://dbdiagram.io/d/full-featured-social-media-app-66a43a2d8b4bb5230e7b6ae7)
+### User Management
+- 🔐 **Authentication & Authorization**
+  - User registration and login
+  - JWT-based authentication
+  - Role-based access control (User, Admin, Owner)
+  - Secure password hashing
 
-<br />
-<br />
+### Social Features
+- 📝 **Posts**
+  - Create posts with text, images, or videos
+  - Edit and delete your own posts
+  - Repost/share functionality
+  - Rich media support
 
-#### Key Features
+- ❤️ **Interactions**
+  - Like/unlike posts
+  - Comment on posts
+  - Bookmark posts for later
+  - Real-time feed updates
 
----
+- 👥 **Following System**
+  - Follow/unfollow other users
+  - View followers and following lists
+  - Personalized feed based on followed users
 
-- **User Authentication**:
+- 🚫 **Privacy & Safety**
+  - Block users
+  - Blocked users' content is automatically hidden
+  - Mutual content hiding when blocked
 
-  - [x] User registration, login and logout
-  - [x] Password hashing and JWT token-based authentication.
-  - [ ] Role-based access control.
+- 📊 **Activity Tracking**
+  - Activity feed showing recent actions
+  - Track posts, likes, follows, and comments
+  - Activity wall for user engagement
 
-- **User profiles**:
+### Additional Features
+- 🔔 **Notifications** (Server-Sent Events)
+- 🖼️ **Profile Management** (Profile pictures, cover photos)
+- 🔗 **Social Links**
+- 🏷️ **Hashtags**
+- 📱 **Responsive UI**
 
-  - [x] Create, update, and delete user profiles.
-  - [x] Profile pictures and cover photos.
-  - [x] Bio, contact information, and social links.
+## 🛠️ Tech Stack
 
-- **Posts and Feeds**:
+### Backend
+- **Framework**: FastAPI
+- **Database**: PostgreSQL
+- **ORM**: SQLAlchemy
+- **Authentication**: JWT (JSON Web Tokens)
+- **Migrations**: Alembic
+- **Image Storage**: Cloudinary
+- **Password Hashing**: bcrypt
 
-  - [x] Create, edit, and delete posts (text, images, videos).
-  - [ ] Like, comment, and share functionality.
-  - [x] Real-time feed updates using WebSocket
+### Frontend
+- **Framework**: React 19.2
+- **Build Tool**: Vite 7.2
+- **Styling**: TailwindCSS
+- **HTTP Client**: Axios
+- **Routing**: React Router v7
+- **Icons**: Lucide React
+- **Language**: TypeScript
 
-- **Followers and Following**:
+## 📋 Prerequisites
 
-  - [x] Follow/unfollow users.
-  - [x] Notifications for follows and follow-backs.
-  - [x] Display follower and following lists.
+- Python 3.8+
+- Node.js 18+
+- PostgreSQL 12+
+- Git
 
-- **Notifications**:
+## 🚀 Getting Started
 
-  - [ ] In-app notifications for likes, comments, shares, and follows.
-  - [ ] Real-time notification updates using SSE.
-  - [ ] Notification settings and preferences.
+### 1. Clone the Repository
 
-- **Messaging**:
-
-  - [ ] Real-time private messaging between users.
-  - [ ] Group chats and chat rooms.
-  - [ ] File sharing within chats (images, documents, etc.).
-
-- **Search and Discovery**:
-
-  - [ ] Search users, posts, hashtags, and keywords.
-  - [ ] Trending topics and suggested users to follow.
-  - [ ] Tagging users in posts and comments.
-
-- **Admin Panel**:
-
-  - [ ] User management (view, ban, unban users).
-  - [ ] Content moderation (flagged posts, reported users).
-  - [ ] Analytics and dashboard for site activity.
-
-<br />
-<br />
-
-#### Requirements
-
----
-
-- **Documentation & Testing**:
-
-  - Postman API documentation.
-  - Comprehensive testing suite using pytest.
-
-- **Database design**:
-
-  - Use PostgreSQL database.
-  - Design a robust schema to handle relationships and indexing.
-
-- **Caching**:
-
-  - Implement caching for frequently accessed data using Redis.
-  - Use background tasks for cache invalidation.
-
-- **Deployment**:
-
-  - Use Docker for containerization.
-  - Set up CI/CD pipelines for automated testing and deployment.
-  - Deploy the application on a cloud provider (AWS, GCP, Azure) or any.
-
-- **Security**:
-
-  - Implement best security practices (CORS, CSRF protection, input validation).
-  - Regular security audits and penetration testing.
-
-- **Error handling**:
-
-  - Endpoints should return the appropriate error responses and status codes
-  - Errors should be properly handled to prevent server from crashing
-
-<br />
-<br />
-
-#### Technologies to Learn and Use
-
----
-
-- `FastAPI`: Main framework for building the application.
-- `SQLAlchemy`: ORM for database interactions.
-- `Alembic`: Database migrations.
-- `Pydantic`: Data validation and settings management.
-- `Docker`: Containerization.
-- `Redis`: Caching and background task management.
-- `Celery`: Background task queue.
-- `WebSockets`: Real-time features (2-way).
-- `SSE`: Real-time features (1-way).
-- `pytest`: Testing.
-
-<br />
-<br />
-
-#### Achievement
-
----
-
-This project will challenge you to integrate various advanced features and best practices, providing a comprehensive learning experience in building complex backend systems with FastAPI.
-
-<br />
-<br />
-
-#### Starting the project
-
----
-
-Follow the steps below to get the project up and running
-
-```shell
-cd fastapi-social-media-api/
-copy .env.sample .env
+```bash
+git clone <your-repo-url>
+cd social-media-app
 ```
 
-At this point, you should update the values in the created .env file. Now, let's setup our environment
+### 2. Backend Setup
 
-```shell
-pip -m venv venv # create virtual environment
-pip install -r requirements.txt # install dependencies
+#### Install Python Dependencies
+
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# On Windows:
+.\\venv\\Scripts\\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
-Everything should run successfully. Next is to setup our database.
+#### Configure Environment Variables
 
-```shell
-# create postgresql database
-CREATE DATABASE fastapi-social-media-api;
+Create a `.env` file in the root directory:
 
-# let's make migrations to our database
+```env
+DEBUG=True
+SERVER_PORT=5001
+DATABASE_URL=postgresql://postgres:your_password@localhost:5432/social_media_db
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+SECRET_KEY=your-secret-key-here
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+```
+
+#### Setup Database
+
+```bash
+# Create database
+createdb social_media_db
+
+# Run migrations
 alembic upgrade head
+
+# (Optional) Seed data
+python seed_data.py
 ```
 
-We are now set up. Now, let's start our project server
+#### Start Backend Server
 
-```shell
-python3 main.py
+```bash
+python main.py
 ```
 
-<br />
-<br />
+Backend will be running at `http://localhost:5001`
+- API Documentation: `http://localhost:5001/docs`
 
-#### Testing
+### 3. Frontend Setup
+
+```bash
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+Frontend will be running at `http://localhost:5173`
+
+## 📁 Project Structure
+
+```
+├── api/                      # Backend API
+│   └── v1/
+│       ├── models/          # SQLAlchemy models
+│       ├── routes/          # API endpoints
+│       ├── schemas/         # Pydantic schemas
+│       ├── services/        # Business logic
+│       ├── responses/       # Response handlers
+│       └── utils/           # Utility functions
+├── frontend/                # React frontend
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── pages/          # Page components
+│   │   ├── context/        # React context
+│   │   └── utils/          # Utility functions
+│   └── public/             # Static assets
+├── alembic/                # Database migrations
+├── main.py                 # FastAPI application entry point
+├── requirements.txt        # Python dependencies
+└── README.md              # This file
+```
+
+## 🔧 API Endpoints
+
+### Authentication
+- `POST /api/v1/auth/register` - Register new user
+- `POST /api/v1/auth/login` - Login user
+
+### Posts
+- `GET /api/v1/posts` - Get feed
+- `POST /api/v1/posts` - Create post
+- `PATCH /api/v1/posts/{id}` - Update post
+- `DELETE /api/v1/posts/{id}` - Delete post
+- `POST /api/v1/posts/{id}/like` - Like/unlike post
+- `POST /api/v1/posts/{id}/comment` - Add comment
+- `GET /api/v1/posts/{id}/comments` - Get comments
+- `POST /api/v1/posts/{id}/bookmark` - Bookmark post
+
+### Users
+- `GET /api/v1/users/me` - Get current user
+- `GET /api/v1/users/{username}` - Get user profile
+- `POST /api/v1/users/{id}/follow` - Follow/unfollow user
+- `POST /api/v1/users/{id}/block` - Block user
+
+### Activity
+- `GET /api/v1/activity` - Get activity feed
+
+For complete API documentation, visit `http://localhost:5001/docs` when the server is running.
+
+## 🧪 Testing
+
+### Backend Tests
+```bash
+python verify_backend.py
+```
+
+### Frontend Build
+```bash
+cd frontend
+npm run build
+```
+
+## 🐛 Troubleshooting
+
+### Backend Issues
+
+**Database Connection Error**
+- Verify PostgreSQL is running
+- Check DATABASE_URL in `.env`
+- Ensure database exists
+
+**Import Errors**
+- Activate virtual environment
+- Reinstall dependencies: `pip install -r requirements.txt`
+
+### Frontend Issues
+
+**API Connection Failed**
+- Verify backend is running on port 5001
+- Check CORS settings in `main.py`
+- Verify API base URL in `frontend/src/utils/api.ts`
+
+**Build Errors**
+- Delete `node_modules` and reinstall: `npm install`
+- Clear cache: `npm cache clean --force`
+
+## 📝 Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `DEBUG` | Enable debug mode | Yes |
+| `SERVER_PORT` | Backend server port | Yes |
+| `DATABASE_URL` | PostgreSQL connection string | Yes |
+| `CLOUDINARY_CLOUD_NAME` | Cloudinary cloud name | Yes |
+| `CLOUDINARY_API_KEY` | Cloudinary API key | Yes |
+| `CLOUDINARY_API_SECRET` | Cloudinary API secret | Yes |
+| `SECRET_KEY` | JWT secret key | Yes |
+| `ALGORITHM` | JWT algorithm (HS256) | Yes |
+| `ACCESS_TOKEN_EXPIRE_MINUTES` | Token expiration time | Yes |
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 👨‍💻 Authors
+
+- Your Name - Initial work
+
+## 🙏 Acknowledgments
+
+- FastAPI for the amazing web framework
+- React team for the frontend library
+- All contributors who helped improve this project
+
+## 📧 Contact
+
+For questions or support, please open an issue on GitHub.
 
 ---
 
-To run your tests using `pytest`, follow the steps below
-
-```shell
-pytest --disable-warnings -vv -s api/v1/tests
-```
+**Made with ❤️ using FastAPI and React**
