@@ -38,13 +38,9 @@ services:
         destination: /index.html
     envVars:
       - key: VITE_API_URL
-        fromService:
-          type: web
-          name: social-media-api
-          property: url
+        sync: false
 
 databases:
   - name: social-media-db
     databaseName: social_media_db
-    user: postgres
     plan: free
